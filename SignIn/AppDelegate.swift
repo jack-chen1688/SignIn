@@ -37,7 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print("Got a sign in error")
         } else {
             print("Sign in now \(user)")
+            _ = UIStoryboard(name: "Main", bundle: nil)
+            self.window?.rootViewController?.performSegue(withIdentifier: "HomeViewSegue", sender:nil)
         }
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
